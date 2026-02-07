@@ -16,6 +16,14 @@ type LoginFormData = z.infer<typeof FormSchema>;
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
+if (!apiUrl) {
+  throw new Error("NEXT_PUBLIC_API_URL não está definida");
+}
+
+
+console.log('API URL:', process.env.NEXT_PUBLIC_API_URL);
+
+
 
 export default function Login() {
   const router = useRouter();
