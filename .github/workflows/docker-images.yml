@@ -1,0 +1,33 @@
+name: Publish Docker Images
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build_and_publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Login to GHCR
+        run: echo "${{ secrets.MY_PAT }}" | docker login ghcr.io -u joaosacala --password-stdin
+
+      # BACKEND
+      - name: Build and push backend image
+        run: |
+          docker build -f backend/Dockerfile \
+            -t ghcr.io/joaosacala/test-image-backend:latest \
+            backend
+
+          docker push ghcr.io/joaosacala/test-image-backend:latest
+
+      # FRONTEND
+      - name: Build and push frontend image
+        run: |
+          docker build -f frontend/Dockerfile \
+            -t ghcr.io/joaosacala/test-image-frontend:latest \
+            frontend
+
+          docker push ghcr.io/joaosacala/test-image-frontend:latest
