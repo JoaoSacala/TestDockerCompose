@@ -14,7 +14,7 @@ const FormSchema = z.object({
 
 type LoginFormData = z.infer<typeof FormSchema>;
 
-const apiUrl = process.env.NEXT_PUBLLIC_API_URL ?? "https://testdockercompose-production.up.railway.app";
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 
 export default function Login() {
@@ -30,7 +30,7 @@ export default function Login() {
 
   async function onSubmit(data: LoginFormData) {
   try {
-    const res = await fetch(`${apiUrl}/login`, {
+    const res = await fetch('http://testdockercompose-production.up.railway.app/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
