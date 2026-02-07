@@ -30,7 +30,7 @@ export default function Login() {
 
   async function onSubmit(data: LoginFormData) {
   try {
-    const res = await fetch('http://testdockercompose-production.up.railway.app/login', {
+    const res = await fetch('https://testdockercompose-production.up.railway.app/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
