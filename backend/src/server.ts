@@ -46,7 +46,7 @@ const PORT = process.env.PORT || 3333;
 
 app.listen({ port: Number(PORT), host: '0.0.0.0' }).then(() => {
   console.log(`HTTP Server is running on port ${PORT}`)
-  console.log(`Swagger docs available at port ${PORT}/docsSwagger`)
+  console.log(`Swagger API Reference docs available  ${PORT}/docsSwagger`)
   console.log(`Scalar API Reference docs available at port ${PORT}/docsScalar`)
 })
 
