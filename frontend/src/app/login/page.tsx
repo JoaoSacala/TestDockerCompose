@@ -14,15 +14,7 @@ const FormSchema = z.object({
 
 type LoginFormData = z.infer<typeof FormSchema>;
 
-const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-
-if (!apiUrl) {
-  throw new Error("NEXT_PUBLIC_API_URL não está definida");
-}
-
-
-console.log('API URL:', process.env.NEXT_PUBLIC_API_URL);
-
+const apiUrl = process.env.NEXT_PUBLLIC_API_URL ?? "https://testdockercompose-production.up.railway.app";
 
 
 export default function Login() {
