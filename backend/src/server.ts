@@ -17,7 +17,7 @@ app.setValidatorCompiler(validatorCompiler)
 app.setSerializerCompiler(serializerCompiler)
 
 app.register(fastifyCors, {
-  origin: 'https://test-docker-compose-five.vercel.app',
+  origin: 'https://test-docker-compose-five.vercel.app/',
 })
 
 app.register(fastifySwagger, {
@@ -42,11 +42,8 @@ app.register(ScalarApiReference, {
 
 app.register(routes)
 
-const PORT = process.env.PORT || 3333;
-
-app.listen({ port: Number(PORT), host: '0.0.0.0' }).then(() => {
-  console.log(`HTTP Server is running on port ${PORT}`)
-  console.log(`Swagger API Reference docs available  ${PORT}/docsSwagger`)
-  console.log(`Scalar API Reference docs available at port ${PORT}/docsScalar`)
+app.listen({ port: 3333, host: '0.0.0.0' }).then(() => {
+  console.log('HTTP Server is running on http://localhost:3333')
+  console.log('Swagger docs available at http://localhost:3333/docsSwagger')
+  console.log('Scalar API Reference docs available at http://localhost:3333/docsScalar')
 })
-
