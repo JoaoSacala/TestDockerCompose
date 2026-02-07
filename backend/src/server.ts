@@ -17,7 +17,7 @@ app.setValidatorCompiler(validatorCompiler)
 app.setSerializerCompiler(serializerCompiler)
 
 app.register(fastifyCors, {
-  origin: '*',
+  origin: 'https://test-docker-compose-five.vercel.app/',
 })
 
 app.register(fastifySwagger, {
