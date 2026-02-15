@@ -1,0 +1,14 @@
+import type { FastifyReply, FastifyRequest } from "fastify";
+
+export class Authenticate {
+  static async handle(request: FastifyRequest, reply: FastifyReply) {
+    try {
+      await request.jwtVerify();
+    } catch {
+      return reply.status(401).send({
+        success: false,
+        message: "Token inválido ou expirado",
+      });
+    }
+  }
+}
