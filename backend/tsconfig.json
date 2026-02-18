@@ -4,20 +4,26 @@
   "_version": "24.0.0",
 
   "compilerOptions": {
-    "lib": ["ESNext"],
-    "target": "ESNext",
-
-    "module": "NodeNext",
-    "moduleResolution": "node16",
+    "lib": [
+      "es2024",
+      "ESNext.Array",
+      "ESNext.Collection",
+      "ESNext.Error",
+      "ESNext.Iterator",
+      "ESNext.Promise",
+    ],
+    "module": "nodenext",
+    "target": "es2024",
 
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
+    "moduleResolution": "node16",
 
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
-    }
+      "@/*": ["src/*"],
+    },
   },
-  "include": ["src"]
+  "include": ["src"],
 }
